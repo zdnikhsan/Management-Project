@@ -7,22 +7,6 @@ use App\Http\Controllers\manageUserController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Gate;
 
-Route::get('/init-admin-setup-super-secret', function () {
-    // 1. Buat role admin & staff jika belum ada di database
-    $adminRole = Role::firstOrCreate(['name' => 'admin']);
-    Role::firstOrCreate(['name' => 'staff']);
-
-    // 2. Cari akun Anda berdasarkan email (sesuaikan email Anda)
-    $user = User::where('email', 'aaa189943@gmail.com')->first();
-
-    if ($user) {
-        // 3. Pasangkan role admin ke akun Anda
-        $user->assignRole($adminRole);
-        return 'Mantap! Akun Anda berhasil diubah menjadi ADMIN.';
-    }
-
-    return 'User tidak ditemukan, cek kembali email Anda.';
-});
 Route::get('/', function () {
     return view('welcome');
 });
