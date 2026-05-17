@@ -6,38 +6,42 @@
     </x-slot>
 
     <div class="py-12 bg-gray-50 dark:bg-gray-900 min-h-screen">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-8">
+        <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 space-y-8">
             
             <!-- Top Stats -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-xl p-6 text-white transform hover:scale-105 transition-all duration-300">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <p class="text-blue-100 text-sm font-semibold uppercase tracking-wider">Total Users</p>
-                            <h3 class="text-4xl font-extrabold mt-1">{{ $totalUsers }}</h3>
+                <a href="{{ route('users.index') }}" class="block">
+                    <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-xl p-6 text-white transform hover:scale-105 transition-all duration-300">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-blue-100 text-sm font-semibold uppercase tracking-wider">Total Users</p>
+                                <h3 class="text-4xl font-extrabold mt-1">{{ $totalUsers }}</h3>
+                            </div>
+                            <div class="bg-white bg-opacity-20 p-3 rounded-xl">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                            </div>
                         </div>
-                        <div class="bg-white bg-opacity-20 p-3 rounded-xl">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                        </div>
+                        <p class="mt-4 text-blue-100 text-sm flex items-center">
+                            <span class="bg-green-400 bg-opacity-30 text-green-100 text-xs px-2 py-0.5 rounded-full mr-2">Active</span>
+                            Platform-wide reach
+                        </p>
                     </div>
-                    <p class="mt-4 text-blue-100 text-sm flex items-center">
-                        <span class="bg-green-400 bg-opacity-30 text-green-100 text-xs px-2 py-0.5 rounded-full mr-2">Active</span>
-                        Platform-wide reach
-                    </p>
-                </div>
+                </a>
 
-                <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl shadow-xl p-6 text-white transform hover:scale-105 transition-all duration-300">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <p class="text-purple-100 text-sm font-semibold uppercase tracking-wider">Total Projects</p>
-                            <h3 class="text-4xl font-extrabold mt-1">{{ $totalProjects }}</h3>
+                <a href="{{ route('projects.index') }}" class="block">
+                    <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl shadow-xl p-6 text-white transform hover:scale-105 transition-all duration-300">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-purple-100 text-sm font-semibold uppercase tracking-wider">Total Projects</p>
+                                <h3 class="text-4xl font-extrabold mt-1">{{ $totalProjects }}</h3>
+                            </div>
+                            <div class="bg-white bg-opacity-20 p-3 rounded-xl">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                            </div>
                         </div>
-                        <div class="bg-white bg-opacity-20 p-3 rounded-xl">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                        </div>
+                        <p class="mt-4 text-purple-100 text-sm">All time created projects</p>
                     </div>
-                    <p class="mt-4 text-purple-100 text-sm">All time created projects</p>
-                </div>
+                </a>
 
                 <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-xl p-6 text-white transform hover:scale-105 transition-all duration-300">
                     <div class="flex justify-between items-center">
@@ -61,7 +65,7 @@
                         <h4 class="text-lg font-bold text-gray-800 dark:text-white">New Sign-ups</h4>
                         <span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-widest">Last 5 Users</span>
                     </div>
-                    <div class="p-0">
+                    <div class="overflow-x-auto">
                         <table class="w-full text-left">
                             <thead class="bg-gray-50 dark:bg-gray-700">
                                 <tr>
@@ -108,7 +112,7 @@
                 <div class="p-6 border-b border-gray-100 dark:border-gray-700">
                     <h4 class="text-lg font-bold text-gray-800 dark:text-white">Recent Actions</h4>
                 </div>
-                <div class="p-0">
+                <div class="overflow-x-auto">
                     <table class="w-full text-left">
                         <thead class="bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 uppercase text-xs">
                             <tr>

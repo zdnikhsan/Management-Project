@@ -28,13 +28,13 @@
                     </x-nav-link>
                 </div>
                 @endrole
-                @role('leader|staff')
+                @hasanyrole('leader|staff')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.*')">
                         {{ __('Project') }}
                     </x-nav-link>
                 </div>
-                @endrole
+                @endhasanyrole
             </div>
 
             <!-- Settings Dropdown -->
@@ -85,7 +85,7 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
+        <div class="pt-2 pb-3 space-y-1 px-4">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
@@ -96,11 +96,11 @@
             </x-responsive-nav-link>
             @endrole
 
-            @role('leader|staff')
+            @hasanyrole('admin|leader|staff')
             <x-responsive-nav-link :href="route('projects.index')" :active="request()->routeIs('projects.*')">
                 {{ __('Project') }}
             </x-responsive-nav-link>
-            @endrole
+            @endhasanyrole
         </div>
 
         <!-- Responsive Settings Options -->
@@ -110,7 +110,7 @@
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
             </div>
 
-            <div class="mt-3 space-y-1">
+            <div class="mt-3 space-y-1 px-4">
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
